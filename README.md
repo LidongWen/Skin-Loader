@@ -3,7 +3,7 @@
 > 支持 Material Design 风格控件一键换肤
 
 ## 示例图
-<img width="320" height="500" src="https://github.com/LidongWen/DownLoadUtils/blob/master/art/GIF.gif"></img> ![](img/download.png)
+<img width="320" height="500" src="https://github.com/LidongWen/Skin-Loader/blob/master/art/GIF.gif"></img> ![](img/download.png)
 
 
 ## 用法
@@ -76,7 +76,7 @@ xmlns:skin="http://schemas.android.com/android/skin"
 
 皮肤包（后缀名为.skin）的本质是一个apk文件，该apk文件不包含代码，只包含资源文件。
 项目中 skinloader编译完成后的 apk 后缀为 .skin 就是一个皮肤包
-![](https://github.com/LidongWen/DownLoadUtils/blob/master/art/clipboard.gif)
+![](https://github.com/LidongWen/Skin-Loader/blob/master/art/clipboard.png)
 
 # Contact me
 ##### E-mail:wenld2014@163.com
