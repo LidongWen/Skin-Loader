@@ -75,7 +75,7 @@ xmlns:skin="http://schemas.android.com/android/skin"
 ###  7. 皮肤包是什么？如何生成？
 
 皮肤包（后缀名为.skin）的本质是一个apk文件，该apk文件不包含代码，只包含资源文件。
-项目中 skinloader编译完成后的 apk 后缀为 .skin 就是一个皮肤包
+项目中 skinloader编译完成后的 apk 后缀为 .skin 就是一个皮肤包  
 ![](https://github.com/LidongWen/Skin-Loader/blob/master/art/clipboard.png)
 
 ## 支持控件、属性
