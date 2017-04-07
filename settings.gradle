@@ -1,1 +1,1 @@
-include ':app', ':skinloader'
+include ':app',':skinwrapper', ':skinloader'
