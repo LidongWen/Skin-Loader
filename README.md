@@ -78,6 +78,35 @@ xmlns:skin="http://schemas.android.com/android/skin"
 项目中 skinloader编译完成后的 apk 后缀为 .skin 就是一个皮肤包
 ![](https://github.com/LidongWen/Skin-Loader/blob/master/art/clipboard.png)
 
+## 支持控件、属性
+#### 基础控件
+> android:textColor  
+> android:src  
+> android:background  
+#### Material Design 控件
+> **CardView**  
+> >cardBackgroundColor     
+
+> **Toolbar**
+  > >subtitleTextColor  
+  titleTextColor  
+  PopupTheme
+
+> **FloatingActionButton**
+> > backgroundTint  
+rippleColor  
+srcCompat
+
+
+> **TabLayout**
+> > tabBackground  
+tabIndicatorColor  
+tabSelectedTextColor  
+tabTextColor
+
+> **CollapsingToolbarLayout**
+>> contentScrim
+
 # Contact me
 ##### E-mail:wenld2014@163.com
 ##### github: [LidongWen](https://github.com/LidongWen)
