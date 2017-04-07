@@ -4,13 +4,12 @@ import android.content.Intent;
 import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 
 import com.hc.skin1.R;
 
 import java.io.File;
 
-import wenld.github.skindemo.activity.MainActivity;
+import wenld.github.skindemo.activity.ViewPageActivity;
 import wenld.github.skindemo.base.BaseLazyFragment;
 import wenld.github.skinloader.SkinManager;
 
@@ -25,8 +24,6 @@ public class TestFragment extends BaseLazyFragment implements View.OnClickListen
     private Button btn_huanfu;
     private Button btn_moren;
     private Button btn_tiaozhuan;
-    private LinearLayout activity_main;
-    private Button btn_tiaozhuan_f;
 
     @Override
     protected int getContentViewLayoutID() {
@@ -57,8 +54,6 @@ public class TestFragment extends BaseLazyFragment implements View.OnClickListen
         btn_huanfu.setOnClickListener(this);
         btn_moren.setOnClickListener(this);
         btn_tiaozhuan.setOnClickListener(this);
-        btn_tiaozhuan_f = (Button)  view.findViewById(R.id.btn_tiaozhuan_f);
-        btn_tiaozhuan_f.setOnClickListener(this);
     }
 
     @Override
@@ -70,14 +65,14 @@ public class TestFragment extends BaseLazyFragment implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_huanfu:
-                String path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "skin/red.skin";
+                String path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "skin/day.skin";
                 SkinManager.getInstance().loadSkin(path);
                 break;
             case R.id.btn_moren:
                 SkinManager.getInstance().restoreDefault();
                 break;
             case R.id.btn_tiaozhuan:
-                Intent intent = new Intent(getContext(), MainActivity.class);
+                Intent intent = new Intent(getContext(), ViewPageActivity.class);
                 startActivity(intent);
                 break;
         }

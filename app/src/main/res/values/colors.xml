@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#c9b12c</color>
+    <color name="colorPrimaryDark">#758739</color>
+    <color name="colorAccent">#0f894c</color>
 
 
     <color name="comment_dialog_bg">#fff5f0ec</color>
@@ -11,6 +11,11 @@
     <color name="comment_dialog_share_text">#ff333333</color>
     <color name="comment_dialog_submit_text">#ffffffff</color>
 
-    <color name="main_bg_color">#2F2FFF</color>
-    <color name="main_text_color">#FFFFFF</color>
+    <color name="text_color">#75ac45</color>
+    <color name="main_text_color">#ac7777</color>
+
+    <color name="cardviewBackground">#f2d6d6</color>
+
+    <color name="tabBackround">#9cafd4</color>
+    <color name="tabTextColor">#b76666</color>
 </resources>

@@ -11,27 +11,28 @@
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="8dp"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="@color/tabBackround"
             app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:title="与ViewPage一起使用">
-
+            app:title="与ViewPage一起使用"
+            app:titleTextColor="@color/tabTextColor"
+        >
         </android.support.v7.widget.Toolbar>
-
+<!--        app:popupTheme="@style/AppTheme.PopupOverlay"-->
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:tabBackground="@color/colorPrimary"
             app:tabMode="scrollable"
-            app:tabSelectedTextColor="#FFFFFF"
-            app:tabTextColor="#00FF00" />
+            app:tabSelectedTextColor="@color/colorAccent"
+            app:tabIndicatorColor="@color/colorAccent"
+            app:tabTextColor="@color/main_text_color" />
 
     </android.support.design.widget.AppBarLayout>
 

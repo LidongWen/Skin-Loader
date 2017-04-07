@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
+import android.util.Log;
 
 import com.hc.skin1.R;
 
@@ -18,21 +18,32 @@ public class ViewPageActivity extends SkinAppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
+    String TAG = "ViewPageActivity";
+    public static int testCount = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_page);
+        long i = System.currentTimeMillis();
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        Log.e(TAG, "开始：testCount" + testCount + "  " + System.currentTimeMillis());
+        setContentView(R.layout.activity_view_page);
+        Log.e(TAG, "结束：testCount" + testCount + "  " + (System.currentTimeMillis() - i));
+
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        mViewPager.setOffscreenPageLimit(8);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+
+//        if (testCount <50 ) {
+//            Intent intent = new Intent(this, ViewPageActivity.class);
+//            startActivity(intent);
+//            testCount++;
+//        }
     }
 
     @Override

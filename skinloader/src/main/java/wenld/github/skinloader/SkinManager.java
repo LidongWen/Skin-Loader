@@ -21,7 +21,6 @@ import wenld.github.skinloader.support.SkinResource;
  * Author: wenld on 2017/4/6 10:37.
  * blog: http://www.jianshu.com/u/99f514ea81b3
  * github: https://github.com/LidongWen
- *
  */
 public class SkinManager {
 
@@ -29,7 +28,7 @@ public class SkinManager {
     private Context mContext;
     private SkinResource mSkinResource;
 
-    private Map<ISkinChangeListener,List<SkinView>> mSkinViews = new HashMap<>();
+    private Map<ISkinChangeListener, List<SkinView>> mSkinViews = new HashMap<>();
 
     static {
         mInstance = new SkinManager();
@@ -39,83 +38,73 @@ public class SkinManager {
         return mInstance;
     }
 
-    public void init(Context context){
+    public void init(Context context) {
         this.mContext = context.getApplicationContext();
 
         String currentSkinPath = SkinPreUtils.getInstance(context).getSkinPath();
 
         File file = new File(currentSkinPath);
 
-        if(!file.exists()){
-            // 不存在，清空皮肤
+        if (!file.exists()) {
             SkinPreUtils.getInstance(context).clearSkinInfo();
             return;
         }
 
-        // 最好做一下  能不能获取到包名
         String packageName = context.getPackageManager().getPackageArchiveInfo(
                 currentSkinPath, PackageManager.GET_ACTIVITIES).packageName;
 
-        if(TextUtils.isEmpty(packageName)){
+        if (TextUtils.isEmpty(packageName)) {
             SkinPreUtils.getInstance(context).clearSkinInfo();
             return;
         }
 
         // 最好校验签名  增量更新再说
 
-
-        mSkinResource = new SkinResource(mContext,currentSkinPath);
+        mSkinResource = new SkinResource(mContext, currentSkinPath);
     }
 
 
     /**
      * 加载皮肤
+     *
      * @param skinPath
      * @return
      */
-    public int loadSkin(String skinPath) {
-
+    public synchronized int loadSkin(String skinPath) {
         File file = new File(skinPath);
-
-        if(!file.exists()){
+        if (!file.exists()) {
             return SkinConfig.SKIN_FILE_NOEXSIST;
         }
 
-        // 最好做一下  能不能获取到包名
         String packageName = mContext.getPackageManager().getPackageArchiveInfo(
                 skinPath, PackageManager.GET_ACTIVITIES).packageName;
 
-        if(TextUtils.isEmpty(packageName)){
+        if (TextUtils.isEmpty(packageName)) {
             return SkinConfig.SKIN_FILE_ERROR;
         }
 
-        // 1. 当前皮肤如果一样不要换
         String currentSkinPath = SkinPreUtils.getInstance(mContext).getSkinPath();
-
-        if(skinPath.equals(currentSkinPath)){
+        if (skinPath.equals(currentSkinPath)) {
             return SkinConfig.SKIN_CHANGE_NOTHING;
         }
 
         // 校验签名  增量更新再说
 
         // 初始化资源管理
-        mSkinResource = new SkinResource(mContext,skinPath);
+        mSkinResource = new SkinResource(mContext, skinPath);
 
-        // 改变皮肤
         changeSkin();
 
         // 保存皮肤的状态
         saveSkinStatus(skinPath);
-
         return SkinConfig.SKIN_CHANGE_SUCCESS;
     }
 
     /**
      * 改变皮肤
      */
-    private void changeSkin() {
+    private synchronized void changeSkin() {
         Set<ISkinChangeListener> keys = mSkinViews.keySet();
-
         for (ISkinChangeListener key : keys) {
             List<SkinView> skinViews = mSkinViews.get(key);
             for (SkinView skinView : skinViews) {
@@ -128,25 +117,23 @@ public class SkinManager {
     }
 
     private void saveSkinStatus(String skinPath) {
-        // 如果用上次写好的数据库，不了解，
-        // 致命一点，不要嵌套
         SkinPreUtils.getInstance(mContext).saveSkinPath(skinPath);
     }
 
     /**
      * 恢复默认
+     *
      * @return
      */
     public int restoreDefault() {
-        // 判断当前有没有皮肤，没有皮肤就不要执行任何方法
         String currentSkinPath = SkinPreUtils.getInstance(mContext).getSkinPath();
 
-        if(TextUtils.isEmpty(currentSkinPath)){
+        if (TextUtils.isEmpty(currentSkinPath)) {
             return SkinConfig.SKIN_CHANGE_NOTHING;
         }
 
         String skinPath = mContext.getPackageResourcePath();
-        mSkinResource = new SkinResource(mContext,skinPath);
+        mSkinResource = new SkinResource(mContext, skinPath);
 
         changeSkin();
 
@@ -157,6 +144,7 @@ public class SkinManager {
 
     /**
      * 获取SkinView通过activity
+     *
      * @param activity
      * @return
      */
@@ -166,15 +154,17 @@ public class SkinManager {
 
     /**
      * 注册
+     *
      * @param skinChangeListener
      * @param skinViews
      */
     public void register(ISkinChangeListener skinChangeListener, List<SkinView> skinViews) {
-        mSkinViews.put(skinChangeListener,skinViews);
+        mSkinViews.put(skinChangeListener, skinViews);
     }
 
     /**
      * 获取当前的皮肤资源
+     *
      * @return
      */
     public SkinResource getSkinResource() {
@@ -183,14 +173,13 @@ public class SkinManager {
 
     /**
      * 检测要不要换肤
+     *
      * @param skinView
      */
     public void checkChangeSkin(SkinView skinView) {
-        // 如果当前有皮肤，也就是保存了皮肤路径，就换一下皮肤
         String currentSkinPath = SkinPreUtils.getInstance(mContext).getSkinPath();
 
-        if(!TextUtils.isEmpty(currentSkinPath)) {
-            // 切换一下
+        if (!TextUtils.isEmpty(currentSkinPath)) {
             skinView.skin();
         }
     }

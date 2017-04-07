@@ -6,7 +6,6 @@ import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.StyleRes;
@@ -57,14 +56,14 @@ public class SkinResource {
 //            Log.e(TAG,"resId -> "+resId+" mPackageName -> "+mPackageName +" resName -> "+resName);
             Drawable drawable = mSkinResource.getDrawable(resId);
             return drawable;
-        } catch (Exception e) {
+        } catch (Resources.NotFoundException e) {
             e.printStackTrace();
             return null;
         }
     }
 
 
-    @ColorInt
+    @ColorRes
     public int getColorIdByName(String resName) {
         try {
             int resId = mSkinResource.getIdentifier(resName, "color", mPackageName);
