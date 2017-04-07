@@ -3,7 +3,7 @@
 > 支持 Material Design 风格控件一键换肤
 
 ## 示例图
-<img width="320" height="500" src="https://github.com/LidongWen/Skin-Loader/blob/master/art/GIF.gif"></img> ![](img/download.png)
+<img width="320" height="500" src="https://github.com/LidongWen/Skin-Loader/blob/master/art/GIF.gif"></img> 
 
 
 ## 用法
