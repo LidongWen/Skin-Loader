@@ -10,7 +10,7 @@
 ```groovy
 // 项目引用
 dependencies {
-    compile 'com.github.LidongWen:DownLoadUtils:1.2.0'
+    compile 'com.github.LidongWen:Skin-Loader:0.0.1'
 }
 
 // 根目录下引用
