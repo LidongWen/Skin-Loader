@@ -104,9 +104,9 @@ tabTextColor
 > **CollapsingToolbarLayout**
 >> contentScrim
 
-> #### 0.0.2 
+> ## 0.0.2 
 >  修复找不到dialog资源 崩溃的 bug 
-> #### 0.0.1
+> ## 0.0.1
 
 # Contact me
 ##### E-mail:wenld2014@163.com
