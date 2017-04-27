@@ -3,8 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Skin-Loader.iml" filepath="$PROJECT_DIR$/Skin-Loader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Skin-Loader.iml" filepath="$PROJECT_DIR$/Skin-Loader.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/skinloader/skinloader.iml" filepath="$PROJECT_DIR$/skinloader/skinloader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/skinwrapper/skinwrapper.iml" filepath="$PROJECT_DIR$/skinwrapper/skinwrapper.iml" />
       <module fileurl="file://$PROJECT_DIR$/skinwrapper/skinwrapper.iml" filepath="$PROJECT_DIR$/skinwrapper/skinwrapper.iml" />
     </modules>
   </component>

@@ -31,7 +31,7 @@ public class SkinAttrSupport {
         List<SkinAttr> skinAttrs = new ArrayList<>();
 
         int attrLength = attrs.getAttributeCount();
-        String attrName,attrValue;
+        String attrName, attrValue;
         for (int index = 0; index < attrLength; index++) {
             // 获取名称 , 值
             attrName = attrs.getAttributeName(index);
@@ -70,8 +70,11 @@ public class SkinAttrSupport {
             attrValue = attrValue.substring(1);
 
             int resId = Integer.parseInt(attrValue);
-
-            return context.getResources().getResourceEntryName(resId);
+            try {
+                return context.getResources().getResourceEntryName(resId);
+            } catch (Exception e) {
+                return null;
+            }
         }
 
         return null;
@@ -84,7 +87,7 @@ public class SkinAttrSupport {
      * @return
      */
     private static SkinType getSkinType(String attrName) {
-        if(attrName.equals("layout_")||"id".equals(attrName)||attrName.contains("padding")||"text".equals(attrName)){
+        if (attrName.equals("layout_") || "id".equals(attrName) || attrName.contains("padding") || "text".equals(attrName)) {
             return null;
         }
         SkinType[] skinTypes = SkinType.values();

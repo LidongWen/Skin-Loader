@@ -10,16 +10,13 @@
 ```groovy
 // 项目引用
 dependencies {
-    compile 'com.github.LidongWen:Skin-Loader:0.0.1'
+    compile 'com.github.LidongWen:Skin-Loader:0.0.2'
 }
 
 // 根目录下引用
-
-allprojects {
-    repositories {
-        jcenter()
-        maven { url "https://www.jitpack.io" }
-    }
+repositories {
+    jcenter()
+    maven { url "https://www.jitpack.io" }
 }
 ```
 ### 1. 在Application中进行初始化
@@ -107,8 +104,12 @@ tabTextColor
 > **CollapsingToolbarLayout**
 >> contentScrim
 
+> #### 0.0.2 
+>  修复找不到dialog资源 崩溃的 bug 
+> #### 0.0.1
+
 # Contact me
 ##### E-mail:wenld2014@163.com
 ##### github: [LidongWen](https://github.com/LidongWen)
-#####人生得意须尽欢, 桃花坞里桃花庵
-#####点个关注呗，[对，不信你点试试？](http://www.jianshu.com/users/99f514ea81b3/timeline)
+##### 人生得意须尽欢, 桃花坞里桃花庵
+##### 点个关注呗，[对，不信你点试试？](http://www.jianshu.com/users/99f514ea81b3/timeline)
