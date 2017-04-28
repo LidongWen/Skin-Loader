@@ -110,6 +110,27 @@ tabTextColor
 >  修复找不到dialog资源 崩溃的 bug 
 > ## **0.0.1**
 
+
+# 扩展，增加支持属性, 欢迎志同道合的猿友们一起来维护
+上面支持的属性不多，还有许多materialDesign控件 以及属性没有支持进来， 说不定 Android 8.0 以后会出现一个  materialDesig_001,materialDesig_002
+
+  1. 找到 SkinType 枚举类
+  2. 增加枚举，如下：
+   ```
+     TEXT_COLOR("textColor") {      // 属性名  AttributesName
+           @Override
+           public void skin(View view, String resName) {
+               SkinResource skinResource = getSkinResource();
+               ColorStateList color = skinResource.getColorByName(resName);     // 找到相应资源, 
+               if (color == null) {
+                   return;
+               }
+               TextView textView = (TextView) view;
+               textView.setTextColor(color);                                    // 赋值
+           }
+       }
+   ```
+
 # Contact me
 ##### E-mail:wenld2014@163.com
 ##### github: [LidongWen](https://github.com/LidongWen)
