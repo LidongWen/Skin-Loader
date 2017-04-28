@@ -34,8 +34,5 @@
         android:padding="10dp"
         android:text="跳转 V"
         android:textColor="@color/text_color" />
-    <CheckBox
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
 </LinearLayout>

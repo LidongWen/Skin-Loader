@@ -40,8 +40,7 @@ public enum SkinType {
             SkinResource skinResource = getSkinResource();
             Drawable drawable = skinResource.getDrawableByName(resName);
             if (drawable != null) {
-                ImageView imageView = (ImageView) view;
-                imageView.setBackgroundDrawable(drawable);
+                view.setBackgroundDrawable(drawable);
                 return;
             }
 

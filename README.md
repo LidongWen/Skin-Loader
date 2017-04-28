@@ -10,7 +10,7 @@
 ```groovy
 // 项目引用
 dependencies {
-    compile 'com.github.LidongWen:Skin-Loader:0.0.2'
+    compile 'com.github.LidongWen:Skin-Loader:0.0.3'
 }
 
 // 根目录下引用
@@ -104,6 +104,8 @@ tabTextColor
 > **CollapsingToolbarLayout**
 >> contentScrim
 
+> ## **0.0.3** 
+>  设置background bug 
 > ## **0.0.2** 
 >  修复找不到dialog资源 崩溃的 bug 
 > ## **0.0.1**
